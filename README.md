@@ -11,14 +11,52 @@ npm install --save react-hook-disclosure-modal
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React from 'react'
+import {
+  ReactHookModalProvider,
+  useDisclosure
+} from 'react-hook-disclosure-modal'
 
-import MyComponent from 'react-hook-disclosure-modal'
+const ModalOne = () => {
+  const { isOpen, onClose } = useDisclosure({
+    tag: ModalOne.name
+  })
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+      Modal One
+    </Modal>
+  )
+}
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const ModalTwo = () => {
+  const { isOpen, onClose } = useDisclosure({
+    tag: ModalTwo.name
+  })
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+      Modal Two
+    </Modal>
+  )
+}
+
+const modals = [ModalOne, ModalTwo]
+
+const App = () => {
+  const { onOpen: onOpenOne } = useDisclosure({
+    tag: ModalOne.name
+  })
+
+  const { onOpen: onOpenTwo } = useDisclosure({
+    tag: ModalTwo.name
+  })
+
+  return (
+    <ReactHookModalProvider modals={modals}>
+      Hello world
+      <Button onClick={onOpenOne}>Open Modal One</Button>
+      <Button onClick={onOpenTwo}>Open Modal Two</Button>
+    </ReactHookModalProvider>
+  )
 }
 ```
 
