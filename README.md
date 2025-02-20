@@ -1,13 +1,13 @@
-# react-hook-model
+# react-hook-modal
 
 > Made with create-react-library
 
-[![NPM](https://img.shields.io/npm/v/react-hook-model.svg)](https://www.npmjs.com/package/react-hook-model) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-hook-modal.svg)](https://www.npmjs.com/package/react-hook-modal) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save react-hook-model
+npm install --save react-hook-modal
 ```
 
 ## Usage
@@ -15,8 +15,7 @@ npm install --save react-hook-model
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-hook-model'
-import 'react-hook-model/dist/index.css'
+import MyComponent from 'react-hook-modal'
 
 class Example extends Component {
   render() {
