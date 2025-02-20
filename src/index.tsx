@@ -4,8 +4,7 @@ import store from './redux/store'
 import { ModalWrapper } from './provider'
 export type ReactHookModalProviderProps = {
   children: React.ReactNode
-  modals:
-  Record<string, React.FunctionComponent>
+  modals: Record<string, React.FunctionComponent>
 }
 export const ReactHookModalProvider = ({
   children,

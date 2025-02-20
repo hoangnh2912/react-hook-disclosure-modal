@@ -1,6 +1,4 @@
-import React, {
-  useMemo
-} from 'react'
+import React, { useMemo } from 'react'
 import { useStoreState } from '../redux/hook'
 
 export const ModalWrapper = ({
@@ -12,13 +10,7 @@ export const ModalWrapper = ({
   const modalOpened = useMemo(() => {
     return Object.entries(modals)
       .filter(([tag]) => !!isOpens[tag]?.input)
-      .map(([_, Modal]) => <Modal
-        key={Modal.name}
-      />)
+      .map(([_, Modal]) => <Modal key={Modal.name} />)
   }, [isOpens])
-  return (
-    <React.Fragment>
-      {modalOpened}
-    </React.Fragment>
-  )
+  return <React.Fragment>{modalOpened}</React.Fragment>
 }
