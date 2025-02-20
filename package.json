@@ -4,7 +4,7 @@
   "description": "React hook modal",
   "author": "hoangnh2912",
   "license": "MIT",
-  "repository": "hoangnh2912/react-hook-modal",
+  "repository": "https://github.com/hoangnh2912/react-hook-modal",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -20,7 +20,8 @@
     "test:lint": "eslint .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "publish": "npm publish"
   },
   "peerDependencies": {
     "react": "^16.0.0"
@@ -60,8 +61,5 @@
   ],
   "dependencies": {
     "easy-peasy": "^6.1.0"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   }
 }
