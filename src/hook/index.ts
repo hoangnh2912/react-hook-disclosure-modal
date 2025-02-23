@@ -74,12 +74,22 @@ export const useDisclosure = <Input = Any, Output = Any>(
     })
   }
 
+  const onChange = (isOpen: boolean) => {
+    if (isOpen) {
+      onOpen()
+    } else {
+      onClose()
+    }
+    disclosureHook && disclosureHook.onChange && disclosureHook.onChange(isOpen)
+  }
+
   return {
     isOpen: !!inputState,
     input: typeof inputState === 'boolean' ? undefined : inputState,
     onOpen,
     onClose,
     onToggle,
-    onOk
+    onOk,
+    onChange
   }
 }
