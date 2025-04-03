@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useStoreActions, useStoreState } from '../redux/hook'
 
-export type Any = string | number | boolean | object | undefined
+export type Any = string | number | boolean | object | undefined | Record<string, any>
 
 export interface DisclosureHookProps<O> {
   tag: string
@@ -34,6 +34,10 @@ export const useDisclosure = <Input = Any, Output = Any>(
   const onCloseAction = useStoreActions((actions) => actions.modal.closeModal)
   const onToggleAction = useStoreActions((actions) => actions.modal.toggleModal)
   const onOpen = (input?: Input) => {
+    // If input is a function, call it and set the result as input
+    if (input && typeof input == 'object' && 'preventDefault' in input) {
+      input = undefined
+    }
     onOpenAction({
       tag,
       input
