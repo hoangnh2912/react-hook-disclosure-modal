@@ -33,7 +33,8 @@ export const useDisclosure = <Input = Any, Output = Any>(
   const okAction = useStoreActions((actions) => actions.modal.okModal)
   const onCloseAction = useStoreActions((actions) => actions.modal.closeModal)
   const onToggleAction = useStoreActions((actions) => actions.modal.toggleModal)
-  const onOpen = (input?: Input) => {
+
+  const updateInput = (input?: Input) => {
     // If input is a function, call it and set the result as input
     if (input && typeof input == 'object' && 'preventDefault' in input) {
       input = undefined
@@ -42,6 +43,10 @@ export const useDisclosure = <Input = Any, Output = Any>(
       tag,
       input
     })
+  }
+
+  const onOpen = (input?: Input) => {
+    updateInput(input)
     disclosureHook?.onOpen?.()
   }
   const onClose = () => {
@@ -94,6 +99,7 @@ export const useDisclosure = <Input = Any, Output = Any>(
     onClose,
     onToggle,
     onOk,
-    onChange
+    onChange,
+    updateInput
   }
 }
