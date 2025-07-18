@@ -1,6 +1,4 @@
-import { StoreProvider } from 'easy-peasy'
 import * as React from 'react'
-import store from './redux/store'
 import { ModalWrapper } from './provider'
 export type ReactHookModalProviderProps = {
   children: React.ReactNode
@@ -11,10 +9,10 @@ export const ReactHookModalProvider = ({
   modals
 }: ReactHookModalProviderProps) => {
   return (
-    <StoreProvider store={store}>
+    <React.Fragment>
       <ModalWrapper modals={modals} />
       {children}
-    </StoreProvider>
+    </React.Fragment>
   )
 }
 export * from './hook'

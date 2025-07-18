@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react'
-import { useStoreState } from '../redux/hook'
+import { useModalStore, State } from '../store'
 
 export const ModalWrapper = ({
   modals
 }: {
   modals: Record<string, React.FunctionComponent>
 }) => {
-  const isOpens = useStoreState((state) => state.modal.modalTags)
+  const isOpens = useModalStore((state: State) => state.modalTags)
   const modalOpened = useMemo(() => {
     return Object.entries(modals)
       .filter(([tag]) => !!isOpens[tag]?.input)

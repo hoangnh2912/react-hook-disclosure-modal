@@ -1,6 +1,6 @@
 {
   "name": "react-hook-disclosure-modal",
-  "version": "1.0.7",
+  "version": "2.0.1",
   "description": "React hook disclosure modal",
   "author": "hoangnh2912",
   "license": "MIT",
@@ -11,8 +11,11 @@
   "engines": {
     "node": ">=10"
   },
+  "bin": {
+    "generate": "dist/cli.js"
+  },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build": "tsc; microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
@@ -53,13 +56,14 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
+    "ts-morph": "^26.0.0",
     "typescript": "^3.7.5"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
-    "easy-peasy": "^6.1.0"
+    "@tanstack/react-store": "^0.7.3"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
