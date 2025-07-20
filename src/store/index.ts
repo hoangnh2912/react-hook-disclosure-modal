@@ -32,7 +32,7 @@ const openModal = (tag: string, input?: Any) => {
       ...state.modalTags,
       [tag]: {
         ...state.modalTags[tag],
-        input
+        input: input ?? true // Default to true if no input is provided
       }
     }
   }))
@@ -81,7 +81,7 @@ const clearAllModalTags = () => {
 export const useModalStore = <T>(
   stateCallback: (state: State) => T,
 ): T => {
-  return stateCallback(useStore(store))
+  return useStore(store, stateCallback)
 }
 
 export const useModalActions = <T>(

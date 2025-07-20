@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { TagType } from './tag'
-import { useModalStore, useModalActions } from '../store'
+import { useModalStore, useModalActions, store } from '../store'
 
 export type Any = string | number | boolean | object | undefined | Record<string, any>
 
@@ -95,6 +95,7 @@ export const useDisclosure = <Input = Any, Output = Any>(
     onToggle,
     onOk,
     onChange,
-    updateInput
+    updateInput,
+    store
   }
 }

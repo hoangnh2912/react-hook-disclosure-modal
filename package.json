@@ -1,6 +1,6 @@
 {
   "name": "react-hook-disclosure-modal",
-  "version": "2.0.1",
+  "version": "2.0.4",
   "description": "React hook disclosure modal",
   "author": "hoangnh2912",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "generate": "dist/cli.js"
   },
   "scripts": {
-    "build": "tsc; microbundle-crl --no-compress --format modern,cjs",
+    "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
